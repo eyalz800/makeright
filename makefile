@@ -86,6 +86,8 @@ else ifeq ($(OUTPUT_TYPE), shared-lib)
 	LINK_COMMAND := $(LINK) -shared -o $(BINARY_DIRECTORY)/$(TARGET_NAME) $(OBJECT_FILES) $(FLAGS)
 else ifeq ($(OUTPUT_TYPE), static-lib)
 	LINK_COMMAND := $(AR) rcs $(BINARY_DIRECTORY)/$(TARGET_NAME) $(OBJECT_FILES)
+else ifeq ($(OUTPUT_TYPE), relocatable)
+	LINK_COMMAND := $(LINK) -r -o $(BINARY_DIRECTORY)/$(TARGET_NAME) $(OBJECT_FILES) $(FLAGS)
 endif
 
 _build: build_finished_message

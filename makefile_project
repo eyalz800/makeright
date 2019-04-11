@@ -1,3 +1,4 @@
+OUTPUT_DIRECTORY_ROOT := ./out
 TARGET_NAME := output
 TARGET_ABIS := native
 OUTPUT_TYPE := executable
